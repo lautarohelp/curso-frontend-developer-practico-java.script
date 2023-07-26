@@ -3,7 +3,7 @@ const desktopMenu = document.querySelector(`.desktop-menu`);
 const menuHamIcon = document.querySelector(`.menu`);
 const menuCarritoIcon = document.querySelector(`.navbar-shopping-cart`);
 const mobileMenu = document.querySelector(`.mobile-menu`);
-const aside = document.querySelector(`.product-detail`);
+const shoppingCartContainer = document.querySelector(`#shoppingCartContainer`);
 const cardsContainer = document.querySelector(`.cards-container`);
 
 
@@ -12,9 +12,9 @@ menuHamIcon.addEventListener(`click`, toggleMobileMenu);
 menuCarritoIcon.addEventListener(`click`, toggleCarritoAside );
 
 function toggleDesktopMenu() {
-    const isAsideClosed = aside.classList.contains(`inactive`);
+    const isAsideClosed = shoppingCartContainer.classList.contains(`inactive`);
     if (!isAsideClosed) {
-        aside.classList.add(`inactive`);
+        shoppingCartContainer.classList.add(`inactive`);
     }
 
 
@@ -23,10 +23,10 @@ function toggleDesktopMenu() {
 }
 
 function toggleMobileMenu() {
-    const isAsideClosed = aside.classList.contains(`inactive`);
+    const isAsideClosed = shoppingCartContainer.classList.contains(`inactive`);
 
     if (!isAsideClosed) {
-        aside.classList.add(`inactive`);
+        shoppingCartContainer.classList.add(`inactive`);
     }
   
 
@@ -51,7 +51,7 @@ function toggleCarritoAside() {
     desktopMenu.classList.add(`inactive`)
    }
 
-    aside.classList.toggle(`inactive`)
+    shoppingCartContainer.classList.toggle(`inactive`)
    
  }
  
@@ -112,7 +112,7 @@ function toggleCarritoAside() {
    </div>
  </div>
  */
-function renderProducts(arr){ 
+  function renderProducts(arr){ 
   
   //podemos almacenar nuestro contenido para organisarlo dentro de una funcion 
   //tambien podemos mandar a llamarla despues y agregarles unas funciones (hacer que las img aparescan despues de seleccionar un buton)
@@ -157,6 +157,7 @@ cardsContainer.appendChild(productCard)
 }
 
 }
+renderProducts(productList);
 
 //Con Element.append() podemos agregar varios nodos y texto mientras que con Element.appendChild() solo podemos agregar un nodo.
 
